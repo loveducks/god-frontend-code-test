@@ -63,21 +63,26 @@ export const ProductsList = () => {
 	return (
 		<Grid>
 			<Row>
-				<SelectInput value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)} className={styles.selectBtn}>
-					{types.map(car => (
-						<option key={car} value={car}>
-							{car === "default" ? "Select" : car}
-						</option>
-					))}
-				</SelectInput>
+				<div className={styles.selectWrapper}>
+					<SelectInput
+						label={"Type"}
+						value={value}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+						className={styles.selectBtn}>
+						{types.map(car => (
+							<option key={car} value={car}>
+								{car === "default" ? "Select" : car}
+							</option>
+						))}
+					</SelectInput>
+				</div>
 				<Swiper
 					className={styles.swiperStyle}
 					ref={swiperRef}
 					modules={[Pagination]}
 					spaceBetween={10}
 					slidesPerView={slides}
-					pagination={{clickable: true}}
-				>
+					pagination={{clickable: true}}>
 					{products.map(product => (
 						<SwiperSlide key={product.id}>
 							<Product product={product} />

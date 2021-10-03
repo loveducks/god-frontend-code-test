@@ -43,6 +43,10 @@
 }
 
 .selectBtn {
-	margin: 20px 0 !important;
 	text-transform: capitalize;
+}
+
+.selectWrapper {
+	margin: 50px 0;
+	width: 100%;
 }

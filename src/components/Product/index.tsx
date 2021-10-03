@@ -44,7 +44,7 @@ export const Product = ({product, single}: {product: ProductInterface; single?: 
 								Learn
 							</VCCLink>
 						</Link>
-						<Link href={`/shop/${product.id}`} as={`/learn/${product.id}`}>
+						<Link href={`/learn/${product.id}`}>
 							<VCCLink arrow='right'>Shop</VCCLink>
 						</Link>
 					</Flex>
